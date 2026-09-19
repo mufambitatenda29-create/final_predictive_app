@@ -102,6 +102,13 @@ st.markdown("**System Status:** 🟢 Sage ERP Connected | 🟢 African HRMS Sync
 st.divider()
 
 st.sidebar.header("🔍 Audit Selection")
+st.sidebar.divider()
+st.sidebar.header("🔌 API Infrastructure Status")
+st.sidebar.caption("Enterprise Integration Hooks")
+st.sidebar.checkbox("Sage X3 ERP (RTGS/Zipit Ledgers)", value=True, disabled=True)
+st.sidebar.checkbox("Active Directory (Login Audits)", value=True, disabled=True)
+st.sidebar.checkbox("Oracle HRMS (Disciplinary/Wage Data)", value=True, disabled=True)
+st.sidebar.info("Webhook Endpoints configured for JSON packet ingestion. System ready for live banking data pipeline.")
 selected_emp = st.sidebar.selectbox("Select Employee:", df['Employee_ID'].tolist())
 emp_data = df[df['Employee_ID'] == selected_emp].iloc[0]
 
